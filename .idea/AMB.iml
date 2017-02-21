@@ -25,6 +25,7 @@
         <option value="$MODULE_DIR$/templates" />
         <option value="$MODULE_DIR$/polls/templates" />
         <option value="$MODULE_DIR$/ambulance/templates" />
+        <option value="$MODULE_DIR$/girls/templates" />
       </list>
     </option>
   </component>

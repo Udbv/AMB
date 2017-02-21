@@ -1,8 +1,6 @@
-li a {
-    color: green;
-}
-body {
-    background: gray url("images/background.gif") no-repeat left bottom ;
-    background-size: 100%;
-    background-position: bottom;
+
+body{ background: beige  url("images/forest.jpg" ) no-repeat right top scroll ;
+    shape-image-threshold: 1;
+    background-size: 1000px;
+
 }

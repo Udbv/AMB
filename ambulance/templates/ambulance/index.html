@@ -6,9 +6,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Ambulance</title>
 </head>
 <body>
 
+{% if latest_reg_list %}
+    <ul>
+    <a>Пацієнти:</a>
+     {% for regs in latest_reg_list %}
+        <li><a href="{% url 'ambulance:detail' regs.id %}">{{ regs.last_name }} {{ regs.first_name }}</a></li>
+    {% endfor %}
+    </ul>
+    <p>Немає записів реєстрацї.</p>
+{% endif %}
 </body>
 </html>
