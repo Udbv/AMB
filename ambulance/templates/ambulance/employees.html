@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% extends "ambulance/base.html" %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employees</title>
+</head>
+<body>
+
+{% block main %}
+{% if employees_list %}
+    <ul>
+    <div>
+        <h1>Пацієнти:</h1>
+    </div>
+
+     {% for emp in employees_list %}
+        <li><a href="{% url 'ambulance:detail_emp' emp.id %}">{{ emp.name }} {{ emp.position }}</a></li>
+    {% endfor %}
+    </ul>
+    {% else %}
+    <p>Немає записів реєстрацї.</p>
+{% endif %}
+
+{% endblock %}
+
+</body>
+</html>

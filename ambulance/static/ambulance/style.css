@@ -1,6 +1,37 @@
 
-body{ background: beige  url("images/forest.jpg" ) no-repeat right top scroll ;
+body{
+    text-decoration-color: #9f1f65;
+    text-align: left;
+background: beige url("images/healthcare.png" ) no-repeat left top scroll  ;
     shape-image-threshold: 1;
-    background-size: 1000px;
+    padding: 5px;
+    background-size: 1920px;
+
+    background-color: rgba(0, 120, 201, 0.5);
+opacity: 1;
+}
+li p{
 
 }
+base{
+}
+
+.active
+{
+background-color: #00bacf;
+}
+
+.inner {max-width:1480px; width:auto; margin:0px auto;}
+
+
+.content{
+    background-color: #00bacf;
+}
+
+.menu a {
+  background: white;
+  color: red;
+    align-content: space-between;
+}
+
+header {color: #00a0e3}

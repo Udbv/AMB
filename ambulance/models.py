@@ -1,10 +1,11 @@
+import datetime
+
 from django.db import models
 from django.utils import timezone
-import datetime
 
 
 class Reg(models.Model):
-    reg_date = models.DateField('date registered',auto_now_add=True)
+    reg_date = models.DateField('date registered', auto_now_add=True)
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=200)
     address = models.CharField(max_length=200)
@@ -28,7 +29,7 @@ class Emp(models.Model):
     position = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.last_name
+        return self.name
 
 
 class Calls(models.Model):
@@ -37,8 +38,16 @@ class Calls(models.Model):
     doctor = models.ForeignKey(Emp, on_delete=models.CASCADE)
     call_time = models.DateTimeField(auto_now_add=True)
     status = models.BooleanField('done', 'fail')
+    reason = models.CharField(max_length=200)
+    def __str__(self):
+        return self.reason
 
-class Worktime(models.Model):
 
-    doctor=models.ForeignKey(Emp)
+class Journal(models.Model):
+
+    doctor = models.ForeignKey(Emp)
     worktime = models.DurationField
+    comment = models.CharField(max_length=200 , default="day")
+
+    def __str__(self):
+        return self.comment

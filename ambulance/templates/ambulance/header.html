@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+</head>
+<body>
+{% block header %}
+<div id="header">
+
+        <div id="user-tools">
+
+                Welcome,
+                <strong>joe</strong>.
+
+
+
+                    <a href="/">View site</a> /
+
+
+
+
+
+
+                <a href="/admin/password_change/">Change password</a> /
+
+                <a href="/admin/logout/">Log out</a>
+
+        </div>
+
+
+
+
+<h2>
+<ul class="menu">
+{% load menubuilder %}
+
+{% menu main_menu %}
+<header>Menu</header>
+{% for item in menuitems %}
+    <a {% if item.current %}class="menu"{% endif %}>
+        <a href="{{ item.url }}" title="{{ item.title|escape }}">{{ item.title }}</a>
+    </a>
+{% endfor %}
+</ul>
+</h2>
+ </div>
+{% endblock %}
+
+</body>
+</html>

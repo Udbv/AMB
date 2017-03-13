@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% extends "ambulance/base.html" %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Пацієнти</title>
+</head>
+<body>
+{% block main %}
+    <form id="patients">
+{% if latest_reg_list %}
+    <ul>
+    <div>
+        <a>Пацієнти:</a>
+    </div>
+
+     {% for regs in latest_reg_list %}
+        <li><a href="{% url 'ambulance:detail' regs.id %}">{{ regs.last_name }} {{ regs.first_name }}</a></li>
+    {% endfor %}
+    </ul>
+    {% else %}
+    <p>Немає записів реєстрацї.</p>
+{% endif %}
+</form>
+{% endblock %}
+
+
+</body>
+</html>

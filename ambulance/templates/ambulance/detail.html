@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-{% load staticfiles %}
+{% extends "ambulance/base.html" %}
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="{% static 'ambulance/style.css' %}" />
+
     <meta charset="UTF-8">
     <title>Анкета</title>
 </head>
 <body>
+{% block main %}
 <p>ID: {{ reg.id}}</p>
 <p>First Name:{{ reg.first_name}}</p>
 <p>Last Name:{{ reg.last_name}}</p>
@@ -14,5 +15,6 @@
 <p>Address:{{ reg.address}}</p>
 <p>Age:{{ reg.age}}</p>
 <p>Call Reason:{{ reg.call_reason }}</p>
+{% endblock %}
 </body>
 </html>

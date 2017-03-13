@@ -21,6 +21,6 @@ urlpatterns = [
     url(r'', include('ambulance.urls', namespace="ambulance")),
     url(r'^admin/', admin.site.urls),
     url(r'^polls/', include('polls.urls', namespace="polls")),
-    url(r'^ambulance/', include('ambulance.urls', namespace="ambulance")),
+
     url(r'^girls/', include('girls.urls', namespace="girls")),
 ]

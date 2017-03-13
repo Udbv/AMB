@@ -1,0 +1,19 @@
+{% extends "ambulance/base.html" %}
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Анкета</title>
+</head>
+<body>
+{% block main %}
+<p>ID: {{ emp.id}}</p>
+<p>First Name:{{ emp.name}}</p>
+<p>Last Name:{{ emp.position}}</p>
+
+{% endblock %}
+
+</body>
+</html>

@@ -14,14 +14,18 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url
-from django.contrib import admin
 
 from . import views
 
 urlpatterns = [
     url(r'^$', views.IndexView.as_view(), name='index'),
     # ex: /polls/5/
-    url(r'^(?P<pk>[0-9]+)/$', views.DetailView.as_view(), name='detail'),
-    url(r'^(?P<pk>[0-9]+)/results/$', views.ResultsView.as_view(), name='results'),
-    url(r'^(?P<question_id>[0-9]+)/vote/$', views.vote, name='vote'),
+    url(r'^journal/$', views.JournalView.as_view(), name='journal'),
+    url(r'^journal/(?P<pk>[0-9]+)/$', views.JournalDetail.as_view(), name='journal_detail'),
+    url(r'^calls/$', views.Calls.as_view(), name='calls'),
+    url(r'^calls/(?P<pk>[0-9]+)/$', views.CallsDetail.as_view(), name='call_detail'),
+    url(r'^employees/$', views.EmployeesView.as_view(), name='employees'),
+    url(r'^employees/(?P<pk>[0-9]+)/$', views.EmployeesDetailView.as_view(), name='detail_emp'),
+    url(r'^ambulance/', views.Patient.as_view(), name='patient'),
+    url(r'^ambulance/(?P<pk>[0-9]+)/$', views.DetailView.as_view(), name='detail'),
     ]

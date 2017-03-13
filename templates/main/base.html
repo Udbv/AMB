@@ -5,6 +5,18 @@
     <title>Title</title>
 </head>
 <body>
+<ul>
+{% load menubuilder %}
 
+{% menu main_menu %}
+
+{% for item in menuitems %}
+    <menu>
+        <li {% if item.current %}class="active"{% endif %}>
+            <a href="{{ item.url }}" title="{{ item.title|escape }}">{{ item.title }}</a>
+        </li>
+    </menu>
+{% endfor %}
+</ul>
 </body>
 </html>

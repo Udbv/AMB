@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% extends "ambulance/base.html" %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Результати</title>
+</head>
+<body>
+{% block main %}
+{% if journal_list %}
+    <ul>
+    <div>
+        <a>Журнал:</a>
+    </div>
+
+     {% for joe in journal_list %}
+        <li><a href="{% url 'ambulance:journal_detail' joe.doctor %}">{{ joe.worktime }} {{ joe.comment }}</a></li>
+    {% endfor %}
+    </ul>
+    {% else %}
+    <p>Немає записів реєстрацї.</p>
+{% endif %}
+{% endblock %}
+
+</body>
+</html>
