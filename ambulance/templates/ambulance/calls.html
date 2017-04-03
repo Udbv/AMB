@@ -14,8 +14,8 @@
         <h1>Виклики:</h1>
     </div>
 
-     {% for call in calls_list %}
-        <li><a href="{% url 'ambulance:call_detail' call.car_id %}">{{ call.call }} {{ call.reason }}</a></li>
+     {% for call_number in calls_list %}
+        <li><a href="{% url 'ambulance:call_detail' call_number.car_id %}">{{ call_number.call }} {{ call_number.reason }}</a></li>
     {% endfor %}
     </ul>
     {% else %}

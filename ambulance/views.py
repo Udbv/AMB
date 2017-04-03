@@ -27,9 +27,13 @@ class DetailView(generic.DetailView):
 
 
 class JournalView(generic.ListView):
-    model = Journal
+
     template_name = 'ambulance/journal.html'
     context_object_name = 'journal_list'
+
+    def get_queryset(self):
+        """Return the last five published questions."""
+        return Journal.objects[:5]
 
 
 class JournalDetail(generic.DetailView):
@@ -43,7 +47,7 @@ class EmployeesView(generic.ListView):
     context_object_name = 'employees_list'
 
 
-class Calls(generic.ListView):
+class Call(generic.ListView):
     model = Calls
     template_name = 'ambulance/calls.html'
     context_object_name = 'calls_list'
@@ -54,8 +58,8 @@ class CallsDetail(generic.DetailView):
     template_name = 'ambulance/call_detail.html'
 
 
-
-class Patient(generic.ListView):
+class PatientView(generic.ListView):
+    model = Reg
     template_name = 'ambulance/patients.html'
     context_object_name = 'latest_reg_list'
 

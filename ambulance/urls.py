@@ -19,13 +19,14 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.IndexView.as_view(), name='index'),
+    url(r'^ambulance/(?P<pk>[0-9]+)/$', views.DetailView.as_view(), name='detail'),
     # ex: /polls/5/
     url(r'^journal/$', views.JournalView.as_view(), name='journal'),
     url(r'^journal/(?P<pk>[0-9]+)/$', views.JournalDetail.as_view(), name='journal_detail'),
-    url(r'^calls/$', views.Calls.as_view(), name='calls'),
+    url(r'^calls/$', views.Call.as_view(), name='cal'),
     url(r'^calls/(?P<pk>[0-9]+)/$', views.CallsDetail.as_view(), name='call_detail'),
     url(r'^employees/$', views.EmployeesView.as_view(), name='employees'),
     url(r'^employees/(?P<pk>[0-9]+)/$', views.EmployeesDetailView.as_view(), name='detail_emp'),
-    url(r'^ambulance/', views.Patient.as_view(), name='patient'),
-    url(r'^ambulance/(?P<pk>[0-9]+)/$', views.DetailView.as_view(), name='detail'),
+    url(r'^ambulance/$', views.PatientView.as_view(), name='patient'),
+
     ]

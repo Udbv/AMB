@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% extends "ambulance/base.html" %}
+{% extends "ambulance/calls.html" %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,10 +7,10 @@
 </head>
 <body>
 {% block main %}
-asdasd
-<p>ID: {{ call.car_id}}</p>
-<p>First Name:{{ Call.reason}}</p>
-<p>Last Name:{{ emp.position}}</p>
+<p>ID: {{ call_numbe}}</p>
+<p>First Name:{{ call.car_id}}</p>
+<p>Last Name:{{ call.doctor}}</p>
+
 {% endblock %}
 
 </body>
